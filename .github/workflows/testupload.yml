@@ -1,0 +1,17 @@
+name: test artifact upload
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        clean:
+        with:
+          fetch-depth: 0
+
+      - name: Build
+        shell: bash
+        run: make
