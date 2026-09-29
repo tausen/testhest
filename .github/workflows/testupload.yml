@@ -14,3 +14,8 @@ jobs:
       - name: Build
         shell: bash
         run: make
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          path: ./main1.pdf
