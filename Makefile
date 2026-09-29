@@ -1,5 +1,5 @@
-#PANDOC=docker run --rm -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} -w ${GITHUB_WORKSPACE} pandoc/latex
-PANDOC=pandoc
+PANDOC=docker run --rm -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} -w ${GITHUB_WORKSPACE} pandoc/latex
+#PANDOC=pandoc
 
 all: build/main1.pdf build/main2.pdf
 
