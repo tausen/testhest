@@ -46,6 +46,8 @@ jobs:
 
       - name: "Upload folders as artifacts"
         id: upload-artifacts
+        env:
+          BUILD_OUTPUT_DIR: build
         run: |
           const fs = require('fs');
           const path = require('path');
