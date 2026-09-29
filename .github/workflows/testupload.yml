@@ -19,3 +19,4 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           path: ./main1.pdf
+          archive: false
