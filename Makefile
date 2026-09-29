@@ -1,8 +1,11 @@
-all:
-	latexmk -lualatex main1.tex
-	latexmk -lualatex main2.tex
+PANDOC=docker run --rm -v $(pwd):$(pwd) -u $(id -u):$(id -g) -w $(pwd) pandoc/latex
+
+all: main1.pdf main2.pdf
+
+%.pdf: %.md
+	${PANDOC} $< -o $@
 
 clean:
-	-@rm *.dvi *.fls *.log *.pdf *.fdb_latexmk *.aux 2> /dev/null
+	-@rm *.pdf 2>/dev/null
 
-.PHONY: all clean
+.PHONY: clean
