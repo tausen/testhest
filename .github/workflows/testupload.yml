@@ -15,11 +15,11 @@ jobs:
         shell: bash
         run: make
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v7
-        with:
-          path: ./main1.pdf
-          archive: false
+      # - name: Upload artifacts
+      #   uses: actions/upload-artifact@v7
+      #   with:
+      #     path: ./main1.pdf
+      #     archive: false
 
       - name: "Setup Node"
         id: setup-node
@@ -85,4 +85,5 @@ jobs:
             console.error(`Failed to upload artifacts: ${error}`);
             process.exit(1);
           });
+          console.log(process.env.BUILD_OUTPUT_DIR);
         shell: node {0}
