@@ -2,7 +2,7 @@ PANDOC=docker run --rm -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} -w ${GITHUB_WO
 
 all: build/main1.pdf build/main2.pdf
 
-%.pdf: %.md
+build/%.pdf: %.md
 	${PANDOC} $< -o $@
 
 clean:
