@@ -1,13 +1,12 @@
 on:
   - pull_request
-  - push
 
 jobs:
-  # forbid-merge-commits:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Run Forbid Merge Commits Action
-  #       uses: motlin/forbid-merge-commits-action@v1
+  forbid-merge-commits:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Forbid Merge Commits Action
+        uses: motlin/forbid-merge-commits-action@v1
 
   build:
     runs-on: ubuntu-latest
