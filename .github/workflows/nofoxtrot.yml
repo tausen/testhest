@@ -1,0 +1,29 @@
+on: pull_request
+
+jobs:
+  forbid-merge-commits:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Forbid Merge Commits Action
+        uses: motlin/forbid-merge-commits-action@v1
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build
+        shell: bash
+        run: make
+      - name: Upload main1
+        uses: actions/upload-artifact@v7
+        with:
+          path: ./main1.pdf
+          archive: false
+      - name: Upload main2
+        uses: actions/upload-artifact@v7
+        with:
+          path: ./main2.pdf
+          archive: false
